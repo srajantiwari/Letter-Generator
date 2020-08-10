@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <style>
+	body {
+	    height: auto;
+	    background: linear-gradient(to right, #eb3349  0%, #f45c43 100%);
+	    color: white;
+	}
+	</style>
+	 <head>
+	   	<title>Letter Generator!!</title>
+	   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	   	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	 </head>
+  <body>
+  <h1></h1>
+  <div class="bg-light container border rounded p-4">
+	<p>
+		To,<br>
+		<span th:text="${receiverDesignation}">receiverDesignation</span>,<br>
+		<span th:text="${department}">department</span>,<br>
+		<span th:text="${institute}">institute</span>,<br>
+		<span th:text="${city}">city</span>,<br>
+		<span th:text="${state}">state</span> - <span th:text="${pinCode}">pinCode</span>,<br><br>
+		<span th:text="${#dates.format(date,'dd MMM yyyy')}">11-May-2020</span>,<br><br> 
+		Subject: Out of Station Leave application<br><br>
+		Respected Sir/ Ma'am,<br>
+		I am a student of <span th:text="${classOrBranch}">classOrBranch</span> - <span th:text="${sectionOrSemester}">sectionOrSemester</span> <span th:text="${currentSectionOrSemester}">currentSectionOrSemester</span> in your institute. 
+		Next week, my cousin’s marriage has been scheduled at <span th:text="${outstationDestination}">outstationDestination</span> and I want to attend it. Therefore, it is not possible for me to attend school for <span th:text="${numberOfDays}">numberOfDays</span> day(s).<br><br>
+		Therefore, I request to kindly grant me leave for <span th:text="${numberOfDays}">numberOfDays</span> day(s) so that I can attend my family function. I shall be really thankful to you.<br><br>
+		Thanking you,<br>
+		Yours obediently,<br><br>
+		<span th:text="${senderName}">senderName</span><br>
+		<span th:text="${classOrBranch}">classOrBranch</span> - <span th:text="${sectionOrSemester}">sectionOrSemester</span> <span th:text="${currentSectionOrSemester}">currentSectionOrSemester</span><br>
+		<span th:text="${rollNo}">rollNo</span><br>
+	</p>
+	</div>
+  </body>
+</html>

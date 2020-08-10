@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <style>
+	body {
+	    height: auto;
+	    background: linear-gradient(to right, #eb3349  0%, #f45c43 100%);
+	    color: white;
+	}
+	</style>
+	 <head>
+	   	<title>Letter Generator!!</title>
+	   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	   	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	 </head>
+  <body>
+  <h1></h1>
+  <div class="bg-light container border rounded p-4">
+	<p>
+		To,<br>
+		<span th:text="${receiverDesignation}">receiverDesignation</span>,<br>
+		<span th:text="${department}">department</span>,<br>
+		<span th:text="${institute}">institute</span>,<br>
+		<span th:text="${city}">city</span>,<br>
+		<span th:text="${state}">state</span> - <span th:text="${pinCode}">pinCode</span>,<br><br>
+		<span th:text="${#dates.format(date,'dd MMM yyyy')}">11-May-2020</span>,<br><br> 
+		Subject: Sick Leave application<br><br>
+		Respected Sir/ Ma'am,<br>
+		I am writing this application to notify you that I am suffering from <span th:text="${degreeOfSevereness}">degreeOfSevereness</span> <span th:text="${disease}">disease</span> and therefore, I need sick leave.<br>
+		I caught this infection last night and I will not be able to attend classes for at least <span th:text="${numberOfDays}">numberOfDays</span>.<br>
+		As notified by my doctor, it is best that I take rest and recover properly before start attending classes.<br>
+		Kindly grant me a leave for <span th:text="${numberOfDays}">numberOfDays</span> days.<br><br>
+		I hope you will understand and grant me a leave for aforementioned period. I shall be really thankful to you.<br><br>
+		Thanking you,<br>
+		Yours obediently,<br><br>
+		<span th:text="${senderName}">senderName</span><br>
+		<span th:text="${classOrBranch}">classOrBranch</span> - <span th:text="${sectionOrSemester}">sectionOrSemester</span> <span th:text="${currentSectionOrSemester}">currentSectionOrSemester</span><br>
+		<span th:text="${rollNo}">rollNo</span><br>
+	</p>
+	</div>
+  </body>
+</html>
